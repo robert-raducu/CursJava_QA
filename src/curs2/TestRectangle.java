@@ -18,6 +18,17 @@ public class TestRectangle {
 		obiect3.latime = 6;
 		System.out.println(obiect3.calculArie(obiect3.lungime, obiect3.latime));
 		
+		//daca facem un constructor cu 2 parametrii, putem sa stergem parametrii la arie 
+		//pentru ca ia numerele de la constructor
+		
+		Rectangle rect = new Rectangle(20,10,"VERDE");
+		Rectangle rect2 = new Rectangle(50,35);
+	
+		System.out.println("----------------Tema-------------------");
+		System.out.println("The colour of the rectangle is: " + rect.AfiseazaCuloareDreptunghi());
+		System.out.println("The colour of the rectangle is: " + rect2.AfiseazaCuloareDreptunghi());
+		System.out.println("The colour of the rectangle is: " + obiect3.AfiseazaCuloareDreptunghi());
+		
 	}
 
 }
