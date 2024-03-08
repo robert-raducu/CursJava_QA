@@ -3,7 +3,7 @@ package curs2;
 public class Rectangle {
 	int lungime;
     int latime;
-    String culoare = "ALB";
+    /* final */ String culoare = "ALB"; //o transform intr o constanta, nu se mai suprascrie
 	
 	//constructor default
 	public Rectangle() {}
