@@ -25,7 +25,7 @@ public class CheckAge {
 			System.out.println("Esti minor");
 		}
 		
-		else if(age >= 18 && age <= 65) {
+		else if(age > 18 && age <= 65) {
 			System.out.println("Esti adult");
 		}
 		
