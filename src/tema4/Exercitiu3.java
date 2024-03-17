@@ -24,7 +24,8 @@ public class Exercitiu3 {
 	public void thisIsYourScore() {
 		
 		askTheUserForTheScore();
-		String message = (score >= 90) ? "Foarte Bine":(score >= 80) ? "Bine": "Suficient";
+		String calificativ = (score >= 90) ? "FB":(score<90 && score >= 80) ? "B": "S";
+		String message = (calificativ == "FB" )? "Ai primit : FoarteBine" : (calificativ == "B") ?"Ai primit : Bine":"Ai primit : Suficient";
 		System.out.println(message);
 	}
 }
