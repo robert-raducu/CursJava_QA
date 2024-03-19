@@ -14,6 +14,8 @@ public class ForVsWhile {
 
 	public static void main(String[] args) {
 		rezolvareCuFor();
+		rezolvareCuFor2();
+		rezolvareCuWhile();
 
 	}
 	
@@ -26,6 +28,10 @@ public class ForVsWhile {
 			System.out.println("Please enter a number: ");
 		}
 	}
+	
+	
+	
+	
 	
 	public static void rezolvareCuFor2() {
 		System.out.println("Please enter a number: ");
@@ -42,6 +48,9 @@ public class ForVsWhile {
 				}
 		}
 	}
+	
+	
+	
 	
 	public static void rezolvareCuWhile() {
 		System.out.println("Please enter a number: ");
