@@ -13,12 +13,13 @@ public class WithdrawExample {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ce suma vrei sa retragi:");
 		
 		int sold = 1000;
 		int sumaRetrasa =  scanner.nextInt();
 		//	for(int i = 1; i < sold-1; i++) {}
 		
-			while(sumaRetrasa < 1 || sumaRetrasa > sold) {
+			while(sumaRetrasa < 1 || sumaRetrasa >= sold) {
 				
 				System.out.println("Suma indisponibila. Introdu alta suma:");
 				sumaRetrasa =  scanner.nextInt();
@@ -27,7 +28,7 @@ public class WithdrawExample {
 			System.out.println("Va rugam ridicati banii!");
 			System.out.println("Noul sold este " + (sold-sumaRetrasa));
 			
-			System.out.println("Mai vrei si alta operatiune?");
+			// System.out.println("Mai vrei si alta operatiune?");
 
 	}
 
