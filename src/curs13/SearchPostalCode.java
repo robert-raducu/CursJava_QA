@@ -26,17 +26,19 @@ public class SearchPostalCode {
 			
 			
 		System.out.println("Introdu un cod postal: ");
-		int cod = scan.nextInt();	
-		
-		
+			
 		try {
+			int cod = scan.nextInt();
 			oras = cp.gasesteOras(cod);
 			System.out.println("Orasul asociat codului postal " + cod + " este " + oras);
 		} catch (CodPostalException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println("Some error occured. Please try again!");
+			scan.next();
 		}
-
 		
+
 		} while(oras.equals(""));
 	}
 
