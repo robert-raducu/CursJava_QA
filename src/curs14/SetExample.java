@@ -25,7 +25,19 @@ public class SetExample {
 		System.out.println(set.size());
 		System.out.println(set);
 		
+		for(String element : set) {
+			System.out.println(element);
+		}
 		
+		set.remove("mov");
+		System.out.println(set);
+		
+		
+		System.out.println(set.contains("alb"));
+		
+		set.clear();
+		
+		System.out.println(set.isEmpty());
 		
 	}
 }

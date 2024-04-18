@@ -27,6 +27,7 @@ public class PropertiesFileProcessor {
 		}
 	}
 	
+	
 	public void readPropertiesFile(String key) {
 		try(InputStream inputStream = new FileInputStream("test.properties")){
 			Properties propFile = new Properties();
@@ -40,18 +41,57 @@ public class PropertiesFileProcessor {
 	}
 	
 	
+	
 	public void updatePropertiesFile(String key, String value) {
-		try(OutputStream output = new FileOutputStream("test.properties");
-				InputStream input = new FileInputStream("test.properties")){
+		Properties propFile = new Properties();	
+		try(InputStream input =  new FileInputStream("test.properties")){
+			propFile.load(input);
+		}catch(IOException e) {	
+			e.printStackTrace();
+		}
+		
+		try(OutputStream output = new FileOutputStream("test.properties")){
+			propFile.setProperty(key, value);
+			propFile.store(output, null);
+		}catch(IOException e) {		
+			e.printStackTrace();
+		}
+	}
+	
+	
+	/*
+	 * 	try(OutputStream output = new FileOutputStream("test.properties");
+				InputStream input =  new FileInputStream("test.properties")){
 			
 			Properties propFile = new Properties();
-			propFile.loadFromXML(input);
-			propFile.setProperty(key,value);
+			propFile.load(input);
+			propFile.setProperty(key, value);
 			propFile.store(output, null);
 			
 		}catch(IOException e) {
+			
 			e.printStackTrace();
 		}
+		
+		*/
+	
+	public void deleteFromPropertiesFile(String key) {
+		
+		Properties propFile = new Properties();	
+		try(InputStream input =  new FileInputStream("test.properties")){
+			propFile.load(input);
+		}catch(IOException e) {	
+			e.printStackTrace();
+		}
+		
+		try(OutputStream output = new FileOutputStream("test.properties")){
+			propFile.remove(key);
+			propFile.store(output, null);
+		}catch(IOException e) {		
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 }
