@@ -4,9 +4,9 @@ public class VarargsExample {
 
 	public static void main(String[] args) {
 		
-		printCeva("A", "B");
-		printCeva();
-		printCeva("A", "B", "C");
+		printCeva(32,"A", "B");
+		printCeva(12);
+		printCeva(12,"A", "B", "C");
 		
 
 	}
@@ -17,10 +17,10 @@ public class VarargsExample {
 //		System.out.println(b);
 //	}
 	
-	public static void printCeva(String...values) {
+	public static void printCeva(int number, String...values) {
 		
 		for(String element: values) {
 			System.out.println(element);
 		}
-	}
+	} //trebuie sa stie sa se descurce cu un nr variabil de argumente
 }

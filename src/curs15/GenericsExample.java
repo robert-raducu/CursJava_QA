@@ -35,7 +35,7 @@ public class GenericsExample {
 		}
 	}
 	
-	public static <T extends Number> void addNumbers(T...values) { //mosteneste number, doar numbere 
+	public static <T extends Number> void addNumbers(T...values) { //mosteneste number, doar numere 
 		//but still generic
 		//
 	}
