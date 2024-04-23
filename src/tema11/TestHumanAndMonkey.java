@@ -4,18 +4,18 @@ public class TestHumanAndMonkey {
 	
 	public static void main(String[] args) {
 		
-		Human human = new Human();
+		Primate human = new Human();
 		Monkey monkey = new Monkey();
 		
 		System.out.println("Primate dataType instance of Human");
 		System.out.println("----------------------------------");
 		human.walk();
 		human.run();
-		System.out.println(human.eat()); 
+		System.out.println(((Human)human).eat()); 
 		human.speak();
-		human.sleep();
+		((Human) human).sleep();
 		
-		human.drink();
+		((Human) human).drink();
 		System.out.println("\n");
 		
 		
