@@ -1,9 +1,12 @@
 package tema14;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
+import java.util.Scanner;
 
 //Scriem un program care printeaza in consola cate calorii are o
 //leguma pe care utilizatorul vrea sa o cumpere.
@@ -25,6 +28,16 @@ import java.util.Properties;
 
 public class VegetablesCalories {
 
+	String vegetable;
+	
+	public String askUserForVegetable() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ce leguma doriti sa cumparati?");
+		vegetable = scanner.next();
+		
+		return vegetable;
+	}
+	
 	public void writeVegetables() {
 		try {
 			OutputStream outputStream = new FileOutputStream("vegetables.calories");
@@ -40,6 +53,35 @@ public class VegetablesCalories {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void readVegetable() {
+		
+		
+		
+		try(InputStream inputStream = new FileInputStream("vegetables.calories")){
+			Properties propFile = new Properties();
+			propFile.load(inputStream);
+			
+			int flag = 1;
+			do {
+				
+			String key = askUserForVegetable();
+			
+			if(propFile.containsKey(key)) {
+				System.out.println("Leguma aleasa de tine are " + propFile.getProperty(key) + " calorii.");
+				flag = 0;
+			}
+			
+			else {
+				System.out.println("Nu vindem aceasta leguma!");
+			}
+			
+			}while(flag  == 1);
+			
+		}catch(IOException e) {
+			System.out.println("Incearca o leguma valida!");
 		}
 	}
 }
